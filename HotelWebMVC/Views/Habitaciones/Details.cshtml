@@ -1,0 +1,38 @@
+﻿@model HotelServiciosAPI.Models.Habitacion
+
+@{
+    ViewData["Title"] = "Detalles de Habitación";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        <div class="card shadow-sm text-center">
+            <div class="card-body p-4">
+                <i class="bi bi-door-open text-primary display-1 mb-3"></i>
+                <h3>Habitación @Model.Numero</h3>
+                <p class="text-muted">Ficha de Infraestructura</p>
+                <hr />
+
+                <div class="row text-start g-3 my-2">
+                    <div class="col-5 text-secondary">Categoría:</div>
+                    <div class="col-7 fw-bold">@Model.Tipo</div>
+
+                    <div class="col-5 text-secondary">Costo por noche:</div>
+                    <div class="col-7 text-success fw-bold">@Model.PrecioPorNoche.ToString("C")</div>
+
+                    <div class="col-5 text-secondary">Estado Operativo:</div>
+                    <div class="col-7">
+                        <span class="badge @(Model.Estado == "Disponible" ? "bg-success" : Model.Estado == "Ocupada" ? "bg-danger" : "bg-warning text-dark")">
+                            @Model.Estado
+                        </span>
+                    </div>
+                </div>
+                <hr />
+                <div class="d-flex justify-content-between mt-3">
+                    <a asp-action="Index" class="btn btn-outline-secondary">Volver</a>
+                    <a asp-action="Edit" asp-route-id="@Model.Numero" class="btn btn-warning text-dark fw-bold">Modificar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

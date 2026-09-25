@@ -1,0 +1,355 @@
+[
+  {
+    "ContainingType": "HotelServiciosAPI.Controllers.ClientesApiController",
+    "Method": "Get",
+    "RelativePath": "api/ClientesApi",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelServiciosAPI.Controllers.ClientesApiController",
+    "Method": "Post",
+    "RelativePath": "api/ClientesApi",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cliente",
+        "Type": "HotelServiciosAPI.Models.Cliente",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelServiciosAPI.Controllers.ClientesApiController",
+    "Method": "Put",
+    "RelativePath": "api/ClientesApi/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "clienteActualizado",
+        "Type": "HotelServiciosAPI.Models.Cliente",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelServiciosAPI.Controllers.ClientesApiController",
+    "Method": "Delete",
+    "RelativePath": "api/ClientesApi/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelServiciosAPI.Controllers.ClientesApiController",
+    "Method": "GetById",
+    "RelativePath": "api/ClientesApi/buscar/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelServiciosAPI.Controllers.EmpleadosApiController",
+    "Method": "Get",
+    "RelativePath": "api/EmpleadosApi",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelServiciosAPI.Controllers.EmpleadosApiController",
+    "Method": "Post",
+    "RelativePath": "api/EmpleadosApi",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "empleado",
+        "Type": "HotelServiciosAPI.Models.Empleado",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelServiciosAPI.Controllers.EmpleadosApiController",
+    "Method": "Put",
+    "RelativePath": "api/EmpleadosApi/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "empActualizado",
+        "Type": "HotelServiciosAPI.Models.Empleado",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelServiciosAPI.Controllers.EmpleadosApiController",
+    "Method": "Delete",
+    "RelativePath": "api/EmpleadosApi/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelServiciosAPI.Controllers.EmpleadosApiController",
+    "Method": "GetById",
+    "RelativePath": "api/EmpleadosApi/buscar/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelServiciosAPI.Controllers.HabitacionesApiController",
+    "Method": "Get",
+    "RelativePath": "api/HabitacionesApi",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelServiciosAPI.Controllers.HabitacionesApiController",
+    "Method": "Post",
+    "RelativePath": "api/HabitacionesApi",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "habitacion",
+        "Type": "HotelServiciosAPI.Models.Habitacion",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelServiciosAPI.Controllers.HabitacionesApiController",
+    "Method": "Put",
+    "RelativePath": "api/HabitacionesApi/{numero}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "numero",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "habActualizada",
+        "Type": "HotelServiciosAPI.Models.Habitacion",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelServiciosAPI.Controllers.HabitacionesApiController",
+    "Method": "Delete",
+    "RelativePath": "api/HabitacionesApi/{numero}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "numero",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelServiciosAPI.Controllers.HabitacionesApiController",
+    "Method": "GetByNumero",
+    "RelativePath": "api/HabitacionesApi/buscar/{numero}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "numero",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelServiciosAPI.Controllers.ReservacionesApiController",
+    "Method": "Get",
+    "RelativePath": "api/ReservacionesApi",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelServiciosAPI.Controllers.ReservacionesApiController",
+    "Method": "Post",
+    "RelativePath": "api/ReservacionesApi",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reserva",
+        "Type": "HotelServiciosAPI.Models.Reservacion",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelServiciosAPI.Controllers.ReservacionesApiController",
+    "Method": "Put",
+    "RelativePath": "api/ReservacionesApi/{codigo}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codigo",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "resActualizada",
+        "Type": "HotelServiciosAPI.Models.Reservacion",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelServiciosAPI.Controllers.ReservacionesApiController",
+    "Method": "Delete",
+    "RelativePath": "api/ReservacionesApi/{codigo}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codigo",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelServiciosAPI.Controllers.ReservacionesApiController",
+    "Method": "GetByCodigo",
+    "RelativePath": "api/ReservacionesApi/buscar/{codigo}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codigo",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelServiciosAPI.Controllers.ReservacionesApiController",
+    "Method": "GetByCliente",
+    "RelativePath": "api/ReservacionesApi/buscarPorCliente/{clienteId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "clienteId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HotelServiciosAPI.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[HotelServiciosAPI.WeatherForecast, HotelServiciosAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]

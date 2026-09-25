@@ -1,0 +1,81 @@
+﻿@model HotelServiciosAPI.Models.Reservacion
+
+@{
+    ViewData["Title"] = "Nueva Reservación";
+    var clientes = ViewBag.Clientes as List<HotelServiciosAPI.Models.Cliente> ?? new List<HotelServiciosAPI.Models.Cliente>();
+    var habitaciones = ViewBag.Habitaciones as List<HotelServiciosAPI.Models.Habitacion> ?? new List<HotelServiciosAPI.Models.Habitacion>();
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow-sm">
+            <div class="card-header bg-success text-white py-3">
+                <h4 class="mb-0"><i class="bi bi-calendar-plus-fill"></i> Apertura de Reservación</h4>
+            </div>
+            <div class="card-body p-4">
+                <form asp-action="Create" method="post">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label asp-for="ClienteId" class="form-label fw-bold">Cliente Huésped</label>
+                            <select asp-for="ClienteId" class="form-select" required>
+                                <option value="">-- Seleccione el Cliente --</option>
+                                @foreach (var c in clientes)
+                                {
+                                    <option value="@c.Identificacion">@c.Nombre @c.PrimerApellido (@c.Identificacion)</option>
+                                }
+                            </select>
+                            <span asp-validation-for="ClienteId" class="text-danger small"></span>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label asp-for="HabitacionNumero" class="form-label fw-bold">Habitación Asignada</label>
+                            <select asp-for="HabitacionNumero" class="form-select" required>
+                                <option value="">-- Seleccione Habitación --</option>
+                                @foreach (var h in habitaciones)
+                                {
+                                    <option value="@h.Numero">Habitación @h.Numero - @h.Tipo (@h.PrecioPorNoche.ToString("C")/noche) [@h.Estado]</option>
+                                }
+                            </select>
+                            <span asp-validation-for="HabitacionNumero" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label asp-for="FechaInicio" class="form-label fw-bold">Fecha de Ingreso (Check-In)</label>
+                            <input asp-for="FechaInicio" class="form-control" type="date" value="@DateTime.Now.ToString("yyyy-MM-dd")" />
+                            <span asp-validation-for="FechaInicio" class="text-danger small"></span>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label asp-for="FechaSalida" class="form-label fw-bold">Fecha de Salida (Check-Out)</label>
+                            <input asp-for="FechaSalida" class="form-control" type="date" value="@DateTime.Now.AddDays(1).ToString("yyyy-MM-dd")" />
+                            <span asp-validation-for="FechaSalida" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="SolicitudesEspeciales" class="form-label fw-bold">Notas o Solicitudes Especiales</label>
+                        <textarea asp-for="SolicitudesEspeciales" class="form-control" rows="3" placeholder="Ej: Cama adicional, Check-in tardío, alérgico a las nueces..."></textarea>
+                        <span asp-validation-for="SolicitudesEspeciales" class="text-danger small"></span>
+                    </div>
+
+                    <input type="hidden" asp-for="Estado" value="Activa" />
+
+                    <div class="d-flex justify-content-between border-top pt-3">
+                        <a asp-action="Index" class="btn btn-outline-secondary">Cancelar</a>
+                        <input type="submit" value="Procesar Reservación" class="btn btn-success px-4" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,85 @@
+﻿@model IEnumerable<HotelServiciosAPI.Models.Empleado>
+
+@{
+    ViewData["Title"] = "Listado de Empleados";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="text-primary"><i class="bi bi-people-fill"></i> Gestión de Empleados</h1>
+    <a asp-action="Create" class="btn btn-success shadow-sm">
+        <i class="bi bi-person-plus-fill"></i> Registrar Nuevo Empleado
+    </a>
+</div>
+
+<!-- Formulario de Búsqueda -->
+<form asp-action="Index" method="get" class="mb-4">
+    <div class="input-group">
+        <input type="text" name="identificacion" class="form-control" placeholder="Buscar empleado por identificación..." />
+        <button type="submit" class="btn btn-primary">
+            <i class="bi bi-search"></i> Buscar
+        </button>
+        <a asp-action="Index" class="btn btn-secondary">Limpiar</a>
+    </div>
+</form>
+
+<!-- Mensaje de Alerta si no se encuentra el empleado -->
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-warning alert-dismissible fade show mb-4" role="alert">
+        <i class="bi bi-exclamation-triangle-fill me-2"></i> @ViewBag.Error
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<div class="card shadow-sm">
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table table-hover table-striped mb-0 align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Identificación</th>
+                        <th>Nombre Completo</th>
+                        <th>Puesto</th>
+                        <th>Ubicación (Provincia / Cantón)</th>
+                        <th class="text-center" style="width: 240px;">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model == null || !Model.Any())
+                    {
+                        <tr>
+                            <td colspan="5" class="text-center text-muted py-4">
+                                <i class="bi bi-info-circle fs-4 d-block mb-2"></i> No hay empleados registrados en el sistema.
+                            </td>
+                        </tr>
+                    }
+                    else
+                    {
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="fw-bold">@item.Identificacion</td>
+                                <td>@item.Nombre @item.PrimerApellido @item.SegundoApellido</td>
+                                <td><span class="badge bg-info text-dark">@item.Puesto</span></td>
+                                <td>@item.Provincia, @item.Canton</td>
+                                <td class="text-center">
+                                    <div class="btn-group font-monospace" role="group">
+                                        <a asp-action="Edit" asp-route-id="@item.Identificacion" class="btn btn-sm btn-outline-warning" title="Editar">
+                                            <i class="bi bi-pencil-square"></i> Editar
+                                        </a>
+                                        <a asp-action="Details" asp-route-id="@item.Identificacion" class="btn btn-sm btn-outline-info" title="Detalles">
+                                            <i class="bi bi-eye"></i> Ver
+                                        </a>
+                                        <a asp-action="Delete" asp-route-id="@item.Identificacion" class="btn btn-sm btn-outline-danger" title="Eliminar">
+                                            <i class="bi bi-trash"></i> Borrar
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+﻿@model HotelServiciosAPI.Models.Habitacion
+
+@{
+    ViewData["Title"] = "Editar Habitación";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-header bg-warning text-dark py-3">
+                <h4 class="mb-0"><i class="bi bi-pencil-square"></i> Modificar Características</h4>
+            </div>
+            <div class="card-body p-4">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+                    <input type="hidden" asp-for="Numero" />
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold text-muted">Número de Habitación (No editable)</label>
+                        <input class="form-control bg-light" value="@Model.Numero" readonly />
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Tipo" class="form-label fw-bold">Tipo de Habitación</label>
+                        <select asp-for="Tipo" class="form-select">
+                            <option value="Simple">Simple</option>
+                            <option value="Doble">Doble</option>
+                            <option value="Suite">Suite</option>
+                            <option value="Familiar">Familiar</option>
+                        </select>
+                        <span asp-validation-for="Tipo" class="text-danger small"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="PrecioPorNoche" class="form-label fw-bold">Precio por Noche</label>
+                        <div class="input-group">
+                            <span class="input-group-text">$</span>
+                            <input asp-for="PrecioPorNoche" class="form-control" type="number" step="0.01" />
+                        </div>
+                        <span asp-validation-for="PrecioPorNoche" class="text-danger small"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label asp-for="Estado" class="form-label fw-bold">Estado Actual</label>
+                        <select asp-for="Estado" class="form-select">
+                            <option value="Disponible">Disponible</option>
+                            <option value="Mantenimiento">Mantenimiento</option>
+                            <option value="Ocupada">Ocupada</option>
+                        </select>
+                        <span asp-validation-for="Estado" class="text-danger small"></span>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <a asp-action="Index" class="btn btn-outline-secondary">Cancelar</a>
+                        <button type="submit" class="btn btn-warning px-4 text-dark fw-bold">Actualizar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,52 @@
+﻿@model HotelServiciosAPI.Models.Empleado
+
+@{
+    ViewData["Title"] = "Detalles del Empleado";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-7">
+        <div class="card shadow-sm border-0">
+            <div class="card-body p-4">
+                <div class="d-flex align-items-center border-bottom pb-3 mb-4">
+                    <div class="bg-info bg-gradient text-dark p-3 rounded-circle me-3">
+                        <i class="bi bi-person-badge fs-2"></i>
+                    </div>
+                    <div>
+                        <h3 class="mb-0 text-dark">@Model.Nombre @Model.PrimerApellido</h3>
+                        <p class="text-muted mb-0">Expediente de Funcionario</p>
+                    </div>
+                </div>
+
+                <dl class="row g-3 fs-6">
+                    <dt class="col-sm-4 text-secondary">Identificación:</dt>
+                    <dd class="col-sm-8 fw-bold">@Model.Identificacion</dd>
+
+                    <dt class="col-sm-4 text-secondary">Nombre Completo:</dt>
+                    <dd class="col-sm-8">@Model.Nombre @Model.PrimerApellido @Model.SegundoApellido</dd>
+
+                    <dt class="col-sm-4 text-secondary">Puesto Ocupado:</dt>
+                    <dd class="col-sm-8"><span class="badge bg-success">@Model.Puesto</span></dd>
+
+                    <dt class="col-sm-4 text-secondary">Ubicación Domicilio:</dt>
+                    <dd class="col-sm-8">
+                        <ul class="list-unstyled mb-0 bg-light p-2 rounded border">
+                            <li><strong>Provincia:</strong> @Model.Provincia</li>
+                            <li><strong>Cantón:</strong> @Model.Canton</li>
+                            <li><strong>Distrito:</strong> @Model.Distrito</li>
+                        </ul>
+                    </dd>
+                </dl>
+
+                <div class="d-flex justify-content-between border-top pt-3 mt-4">
+                    <a asp-action="Index" class="btn btn-outline-secondary">
+                        <i class="bi bi-arrow-left"></i> Volver al Listado
+                    </a>
+                    <a asp-action="Edit" asp-route-id="@Model.Identificacion" class="btn btn-warning px-4 text-dark fw-bold">
+                        <i class="bi bi-pencil-square"></i> Editar Información
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

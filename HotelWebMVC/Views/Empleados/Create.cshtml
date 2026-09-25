@@ -1,0 +1,89 @@
+﻿@model HotelServiciosAPI.Models.Empleado
+
+@{
+    ViewData["Title"] = "Registrar Empleado";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-success text-white py-3">
+                <h4 class="mb-0"><i class="bi bi-person-plus-fill"></i> Registrar Nuevo Empleado</h4>
+            </div>
+            <div class="card-body p-4">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Identificacion" class="form-label fw-bold">Cédula / Identificación</label>
+                            <input asp-for="Identificacion" class="form-control" placeholder="Ej: 112340567" />
+                            <span asp-validation-for="Identificacion" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Puesto" class="form-label fw-bold">Puesto u Oficio</label>
+                            <select asp-for="Puesto" class="form-select">
+                                <option value="">-- Seleccione un puesto --</option>
+                                <option value="Recepcionista">Recepcionista</option>
+                                <option value="Administrador">Administrador</option>
+                                <option value="Mantenimiento">Mantenimiento</option>
+                                <option value="Ama de Llaves">Ama de Llaves</option>
+                                <option value="Gerente">Gerente</option>
+                            </select>
+                            <span asp-validation-for="Puesto" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label asp-for="Nombre" class="form-label fw-bold">Nombre</label>
+                            <input asp-for="Nombre" class="form-control" />
+                            <span asp-validation-for="Nombre" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label asp-for="PrimerApellido" class="form-label fw-bold">Primer Apellido</label>
+                            <input asp-for="PrimerApellido" class="form-control" />
+                            <span asp-validation-for="PrimerApellido" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label asp-for="SegundoApellido" class="form-label fw-bold">Segundo Apellido</label>
+                            <input asp-for="SegundoApellido" class="form-control" />
+                            <span asp-validation-for="SegundoApellido" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    <h5 class="text-secondary border-bottom pb-2 mt-3 mb-3"><i class="bi bi-geo-alt-fill"></i> Ubicación Domiciliaria</h5>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label asp-for="Provincia" class="form-label fw-bold">Provincia</label>
+                            <input asp-for="Provincia" class="form-control" placeholder="Ej: San José" />
+                            <span asp-validation-for="Provincia" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label asp-for="Canton" class="form-label fw-bold">Cantón</label>
+                            <input asp-for="Canton" class="form-control" placeholder="Ej: Central" />
+                            <span asp-validation-for="Canton" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label asp-for="Distrito" class="form-label fw-bold">Distrito</label>
+                            <input asp-for="Distrito" class="form-control" placeholder="Ej: Hospital" />
+                            <span asp-validation-for="Distrito" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-end gap-2 mt-4">
+                        <a asp-action="Index" class="btn btn-outline-secondary">Cancelar</a>
+                        <button type="submit" class="btn btn-success px-4">Guardar Empleado</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

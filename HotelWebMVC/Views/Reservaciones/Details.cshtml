@@ -1,0 +1,53 @@
+﻿@model HotelServiciosAPI.Models.Reservacion
+
+@{
+    ViewData["Title"] = "Detalle de la Reservación";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-body p-4">
+                <div class="text-center mb-3">
+                    <i class="bi bi-file-earmark-text text-success display-4"></i>
+                    <h4 class="mt-2">Comprobante de Reservación</h4>
+                    <span class="badge font-monospace bg-dark text-white p-2"># @Model.CodigoReservacion</span>
+                </div>
+                <hr />
+
+                <div class="row g-3 fs-6">
+                    <div class="col-5 text-secondary">Identificación Cliente:</div>
+                    <div class="col-7 fw-bold">@Model.ClienteId</div>
+
+                    <div class="col-5 text-secondary">Habitación Reservada:</div>
+                    <div class="col-7">N° @Model.HabitacionNumero</div>
+
+                    <div class="col-5 text-secondary">Fecha Check-In:</div>
+                    <div class="col-7 text-primary">@Model.FechaInicio.ToString("dd/MM/yyyy")</div>
+
+                    <div class="col-5 text-secondary">Fecha Check-Out:</div>
+                    <div class="col-7 text-primary">@Model.FechaSalida.ToString("dd/MM/yyyy")</div>
+
+                    <div class="col-5 text-secondary">Estado Operativo:</div>
+                    <div class="col-7">
+                        <span class="badge @(Model.Estado == "Activa" ? "bg-success" : "bg-danger")">
+                            @Model.Estado
+                        </span>
+                    </div>
+
+                    <div class="col-12 text-secondary mb-0">Solicitudes y Observaciones:</div>
+                    <div class="col-12">
+                        <div class="bg-light p-3 rounded border italic text-muted">
+                            @(string.IsNullOrEmpty(Model.SolicitudesEspeciales) ? "Sin solicitudes especiales anotadas." : Model.SolicitudesEspeciales)
+                        </div>
+                    </div>
+                </div>
+
+                <hr />
+                <div class="d-flex justify-content-start mt-3">
+                    <a asp-action="Index" class="btn btn-outline-secondary"><i class="bi bi-arrow-left"></i> Volver</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

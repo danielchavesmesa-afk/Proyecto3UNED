@@ -1,0 +1,45 @@
+﻿@model HotelServiciosAPI.Models.Cliente
+
+@{
+    ViewData["Title"] = "Eliminar Cliente";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show shadow-sm" role="alert">
+                    <i class="bi bi-exclamation-triangle-fill"></i> @TempData["ErrorMessage"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+
+            <div class="card border-danger shadow-sm">
+                <div class="card-header bg-danger text-white">
+                    <h4 class="mb-0"><i class="bi bi-exclamation-octagon-fill"></i> ¿Confirmar eliminación física?</h4>
+                </div>
+                <div class="card-body">
+                    <p class="text-danger fw-bold">Atención: Esta acción eliminará permanentemente al cliente de los registros del sistema.</p>
+                    <hr />
+                    <dl class="row mb-4">
+                        <dt class="col-sm-4 text-muted">Identificación:</dt>
+                        <dd class="col-sm-8">@Model.Identificacion</dd>
+
+                        <dt class="col-sm-4 text-muted">Cliente:</dt>
+                        <dd class="col-sm-8">@Model.Nombre @Model.PrimerApellido @Model.SegundoApellido</dd>
+                    </dl>
+
+                    <form asp-action="Delete">
+                        <input type="hidden" asp-for="Identificacion" />
+                        <div class="d-flex justify-content-between">
+                            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+                            <button type="submit" class="btn btn-danger">Eliminar Definitivamente</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

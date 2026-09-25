@@ -1,0 +1,90 @@
+﻿@{
+    ViewData["Title"] = "Página Principal";
+}
+
+<div class="container mt-4">
+    <!-- Header / Banner de Bienvenida -->
+    <div class="p-5 mb-4 bg-light rounded-3 shadow-sm text-center border">
+        <h1 class="display-5 fw-bold text-primary">
+            <i class="bi bi-building"></i> Sistema de Gestión Hotelera
+        </h1>
+        <p class="fs-5 text-muted col-md-10 mx-auto">
+            Bienvenido al panel de administración. Seleccione uno de los módulos a continuación para gestionar clientes, habitaciones, empleados o reservaciones.
+        </p>
+    </div>
+
+    <!-- Tarjetas de Acceso Rápido a los Módulos -->
+    <div class="row g-4">
+        <!-- Reservaciones -->
+        <div class="col-md-6 col-lg-3">
+            <div class="card h-100 shadow-sm border-0 text-center">
+                <div class="card-body d-flex flex-column">
+                    <div class="mb-3 text-success fs-1">
+                        <i class="bi bi-calendar-check-fill"></i>
+                    </div>
+                    <h5 class="card-title fw-bold">Reservaciones</h5>
+                    <p class="card-text text-muted small flex-grow-1">
+                        Consulte, registre y administre el libro de reservaciones del hotel.
+                    </p>
+                    <a asp-controller="Reservaciones" asp-action="Index" class="btn btn-outline-success mt-2">
+                        Ir a Reservaciones
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Clientes -->
+        <div class="col-md-6 col-lg-3">
+            <div class="card h-100 shadow-sm border-0 text-center">
+                <div class="card-body d-flex flex-column">
+                    <div class="mb-3 text-primary fs-1">
+                        <i class="bi bi-people-fill"></i>
+                    </div>
+                    <h5 class="card-title fw-bold">Clientes</h5>
+                    <p class="card-text text-muted small flex-grow-1">
+                        Administre la base de datos de clientes e información personal.
+                    </p>
+                    <a asp-controller="Clientes" asp-action="Index" class="btn btn-outline-primary mt-2">
+                        Ir a Clientes
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Habitaciones -->
+        <div class="col-md-6 col-lg-3">
+            <div class="card h-100 shadow-sm border-0 text-center">
+                <div class="card-body d-flex flex-column">
+                    <div class="mb-3 text-info fs-1">
+                        <i class="bi bi-door-open-fill"></i>
+                    </div>
+                    <h5 class="card-title fw-bold">Habitaciones</h5>
+                    <p class="card-text text-muted small flex-grow-1">
+                        Control de estados, tipos y mantenimiento de habitaciones.
+                    </p>
+                    <a asp-controller="Habitaciones" asp-action="Index" class="btn btn-outline-info mt-2">
+                        Ir a Habitaciones
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Empleados -->
+        <div class="col-md-6 col-lg-3">
+            <div class="card h-100 shadow-sm border-0 text-center">
+                <div class="card-body d-flex flex-column">
+                    <div class="mb-3 text-warning fs-1">
+                        <i class="bi bi-person-badge-fill"></i>
+                    </div>
+                    <h5 class="card-title fw-bold">Empleados</h5>
+                    <p class="card-text text-muted small flex-grow-1">
+                        Consulte el personal del hotel, sus puestos e información de contacto.
+                    </p>
+                    <a asp-controller="Empleados" asp-action="Index" class="btn btn-outline-warning text-dark mt-2">
+                        Ir a Empleados
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

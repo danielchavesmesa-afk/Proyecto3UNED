@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="HotelAccesoDatos/HotelAccesoDatos.csproj" Id="1f738142-1ffd-4a32-9d3a-54fa58469c47" />
+  <Project Path="HotelServiciosAPI/HotelServiciosAPI.csproj" />
+  <Project Path="HotelWebMVC/HotelWebMVC.csproj" />
+</Solution>
